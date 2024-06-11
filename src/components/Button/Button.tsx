@@ -6,7 +6,7 @@ interface Props{
 
 const Button:React.FC<Props> = ({children}) => {
     return(
-       <button>Naveen Au Btn{children}</button>
+       <button>Purnima Au Btn {children}</button>
     )
 }
 
