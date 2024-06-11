@@ -17,7 +17,12 @@
   ],
   "type": "module",
   "author": "naveengitboi",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naveengitboi/gitboi-ui-library.git"
+  },
+  "readme": "https://github.com/naveengitboi/gitboi-ui-library.git",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
