@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-interface ButtonProps {
+export interface ButtonProps {
   variant?: "text" | "outlined" | "contained";
   color?: string;
   customStyles?: any;
@@ -20,7 +20,7 @@ const BasicButtonStyles = css`
   border: none;
   outline: none;
   cursor: pointer;
-  font-size: var(--normal);
+  font-size:16px;
   border-radius: 0.25rem;
   text-align: center;
   text-decoration: none;
@@ -29,7 +29,7 @@ const BasicButtonStyles = css`
 
 //noraml button
 
-const Btn = styled.button<ButtonProps>`
+const Btngbl = styled.button<ButtonProps>`
   ${BasicButtonStyles}
   background-color: ${(props) => {
     if (props.variant === "contained") {
@@ -40,7 +40,7 @@ const Btn = styled.button<ButtonProps>`
   }};
 
   border: ${(props) => {
-    if (props.variant === "outlined" || props.variant === "contained") {
+    if (props.variant === "outlined") {
       return `${props.bSize ? `${props.bSize}px` : `2px`} solid ${
         props.borderColor ? props.borderColor : "#45648d"
       }`;
@@ -50,7 +50,8 @@ const Btn = styled.button<ButtonProps>`
   }};
 
   border-radius: ${(props) => (props.bRadius ? props.bRadius : "0.25rem")};
-  color: ${(props) => (props.color ? props.color : "white")};
+
+  color: ${(props) => (props.color ? props.color : "")};
 
   padding: 15px 32px;
 
@@ -72,7 +73,10 @@ const Btn = styled.button<ButtonProps>`
 
 
 `;
-interface ButtonWithIconProps extends ButtonProps {
+
+//svg btn
+
+export interface ButtonWithIconProps extends ButtonProps {
   svgSize?: string;
   svgColor?: string;
   hoverRotate?: string;
@@ -83,8 +87,9 @@ interface ButtonWithIconProps extends ButtonProps {
   hoverSvgColor?: string;
 }
 
+
 //button with icon
-const ButtonWithIcon = styled(Btn)<ButtonWithIconProps>`
+const ButtonWithIcon = styled(Btngbl)<ButtonWithIconProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,4 +128,4 @@ const ButtonsGroup = styled.div`
   align-items: center;
 `;
 
-export { Btn, ButtonWithIcon, ButtonsGroup };
+export { Btngbl, ButtonWithIcon, ButtonsGroup };

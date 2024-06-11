@@ -1,14 +1,18 @@
-import React, {ReactNode} from "react";
+import React, {ReactNode, ReactSVG, ReactSVGElement} from "react";
+import {Md16Mp} from 'react-icons/md'
+import { Btngbl ,ButtonWithIcon} from "./ButtonStyled";
+import { ButtonWithIconProps } from "./ButtonStyled";
 
-import { Btn } from "./ButtonStyled";
-
-interface Props{
-    children:ReactNode | ReactNode[]
+interface BtnGblProps extends ButtonWithIconProps{
+    children:ReactNode | ReactNode[],
+    endIcon?: ReactNode | ReactNode[],
+    startIcon?: ReactNode | ReactNode[],
 }
 
-const Button:React.FC<Props> = ({children}) => {
+
+const Button:React.FC<BtnGblProps> = (props) => {
     return(
-       <Btn variant={'outlined'} >{children}</Btn>
+       <ButtonWithIcon {...props} >{props.startIcon} {props.children} {props.endIcon}</ButtonWithIcon>
     )
 }
 
