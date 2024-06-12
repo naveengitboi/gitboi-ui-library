@@ -13,6 +13,7 @@ type Story = StoryObj<typeof CodeBlock>;
 
 export const CodeBlockStory: Story = {
   args: {
-    code: 'const x = 1;',
+    code: 'const x = 5;',
+    fontFamily: 'monospace',
   }
 };

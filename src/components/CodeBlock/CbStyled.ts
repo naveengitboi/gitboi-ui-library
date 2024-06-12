@@ -8,6 +8,9 @@ export interface CbWrapperProps {
   padding?: string;
   bSize?:number;
   color?: string;
+  fontFamily?: string;
+  
+  customStyles?: any;
 
 }
 
@@ -21,4 +24,9 @@ export const CbWrapper = styled.span<CbWrapperProps>`
   padding: ${props => props.padding || '5px 10px'};
   color: ${props => props.color || '#fff'};
 
+  font-family: ${props => props.fontFamily || 'monospace'};
+
+  && {
+    ${props => props.customStyles}
+  }
 `;

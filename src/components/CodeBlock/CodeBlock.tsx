@@ -1,14 +1,14 @@
-import React from "react";
+import React, {ReactNode} from "react";
 import { CbWrapper, CbWrapperProps } from "./CbStyled";
 
 export interface CodeBlockProps extends CbWrapperProps {
-    code: string;
+    children?: ReactNode | ReactNode[] |string;
 }
 
 const CodeBlock = (props: CodeBlockProps) => {
-    const {code, ...rest} = props 
+    const {children, ...rest} = props 
     return(
-        <CbWrapper {...rest}>{code}</CbWrapper>
+        <CbWrapper {...rest}>{children}</CbWrapper>
     )
 
 }

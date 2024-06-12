@@ -1,28 +1,7 @@
 import styled, { css } from "styled-components";
-
-export interface ButtonProps {
+import { commonProps } from "../CommonStyledProps";
+export interface ButtonProps extends commonProps{
   variant?: "text" | "outlined" | "contained";
-  color?: string;
-  customStyles?: any;
-  fSize?: string;
-  bSize?: number;
-  bgColor?: string;
-  borderColor?: string;
-  hoverBgColor?: string;
-  hoverColor?: string;
-  bRadius?: string;
-  transTime?: string;
-  hoverBorderColor?: string;
-  w?: string;
-  h?: string;
-  svgSize?: string;
-  svgColor?: string;
-  hoverRotate?: string;
-  hoverMove?: string;
-  hoverAll?: boolean;
-  hoverScale?: string;
-  gapBw?: number;
-  hoverSvgColor?: string;
 }
 
 export const BasicButtonStyles = css`
