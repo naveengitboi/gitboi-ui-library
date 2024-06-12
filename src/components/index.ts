@@ -8,6 +8,7 @@
   // This is the component that uses the ButtonStyled component
 
 
-  export {default as Button} from './Button'
-
+export {default as Button} from './Button'
+export {default as ButtonIcon} from './ButtonIcon' 
+export {default as CodeBlock} from './CodeBlock'
   //Navbars
