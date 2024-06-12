@@ -1,19 +1,21 @@
-import React, {ReactNode, ReactSVG, ReactSVGElement} from "react";
-import {Md16Mp} from 'react-icons/md'
-import { Btngbl ,ButtonWithIcon} from "./ButtonStyled";
-import { ButtonWithIconProps } from "./ButtonStyled";
+import React, { ReactNode } from "react";
 
-interface BtnGblProps extends ButtonWithIconProps{
-    children:ReactNode | ReactNode[],
-    endIcon?: ReactNode | ReactNode[],
-    startIcon?: ReactNode | ReactNode[],
+import { Btngbl, ButtonProps } from "./ButtonStyled";
+
+interface BtnGblProps extends ButtonProps {
+  children: ReactNode | ReactNode[];
+  endIcon?: ReactNode | ReactNode[];
+  startIcon?: ReactNode | ReactNode[];
+  onClickEvent?: () => void;
 }
 
+const Button: React.FC<BtnGblProps> = (props) => {
+  const { children, onClickEvent, startIcon, endIcon, ...rest } = props;
+  return (
+    <Btngbl {...rest}>
+      {startIcon} {children} {endIcon}
+    </Btngbl>
+  );
+};
 
-const Button:React.FC<BtnGblProps> = (props) => {
-    return(
-       <ButtonWithIcon {...props} >{props.startIcon} {props.children} {props.endIcon}</ButtonWithIcon>
-    )
-}
-
-export default Button
+export default Button;

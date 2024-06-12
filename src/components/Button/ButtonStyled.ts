@@ -13,9 +13,19 @@ export interface ButtonProps {
   bRadius?: string;
   transTime?: string;
   hoverBorderColor?: string;
+  w?: string;
+  h?: string;
+  svgSize?: string;
+  svgColor?: string;
+  hoverRotate?: string;
+  hoverMove?: string;
+  hoverAll?: boolean;
+  hoverScale?: string;
+  gapBw?: number;
+  hoverSvgColor?: string;
 }
 
-const BasicButtonStyles = css`
+export const BasicButtonStyles = css`
   background-color: transparent;
   border: none;
   outline: none;
@@ -30,7 +40,13 @@ const BasicButtonStyles = css`
 //noraml button
 
 const Btngbl = styled.button<ButtonProps>`
+
+
   ${BasicButtonStyles}
+
+  width: ${(props) => (props.w ? props.w : "auto")};
+  height: ${(props) => (props.h ? props.h : "auto")};
+
   background-color: ${(props) => {
     if (props.variant === "contained") {
       return props.bgColor ? props.bgColor : "#45648d";
@@ -66,30 +82,6 @@ const Btngbl = styled.button<ButtonProps>`
         border-color: ${(props) =>props.hoverBorderColor ? props.hoverBorderColor : props.hoverBgColor};
     }
    
-
-    && {
-        ${(props) => props.customStyles}
-    }
-
-
-`;
-
-//svg btn
-
-export interface ButtonWithIconProps extends ButtonProps {
-  svgSize?: string;
-  svgColor?: string;
-  hoverRotate?: string;
-  hoverMove?: string;
-  hoverAll?: boolean;
-  hoverScale?: string;
-  gapBw?: number;
-  hoverSvgColor?: string;
-}
-
-
-//button with icon
-const ButtonWithIcon = styled(Btngbl)<ButtonWithIconProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,14 +110,15 @@ const ButtonWithIcon = styled(Btngbl)<ButtonWithIconProps>`
 
     }}
   }
+
+  
+    &&{
+        ${(props) => props.customStyles}
+    }
+
+
 `;
 
-const ButtonsGroup = styled.div`
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  justify-content: center;
-  align-items: center;
-`;
 
-export { Btngbl, ButtonWithIcon, ButtonsGroup };
+
+export { Btngbl };
