@@ -4,7 +4,7 @@ import { MdWarning } from "react-icons/md";
 import CodeBlock from "../CodeBlock";
 
 const InfoText:React.FC = (props) => {
-
+    
     return(
         <InfoWrapper>
             <InfoSvg>
