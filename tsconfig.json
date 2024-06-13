@@ -9,7 +9,7 @@
     "rootDir": ".",
     "jsx": "react",
     "declaration": true,
-    "declarationDir": "types",
+    "declarationDir": "dist/types", // Change the declaration directory to a different path
     "sourceMap": true,
     "outDir": "dist",
     "moduleResolution": "Node",
