@@ -1,6 +1,15 @@
 import styled from "styled-components";
 import { commonCss } from "../CommonStyledProps";
+import { commonProps } from "../../Styles/CommonStyledProps";
 
+export interface InfoTextProps extends commonProps{
+    code?:string,
+    svg?: React.ReactNode;
+    heading?: string;
+    content?: string;
+    type?: 'error' | 'warning' |'success' | 'note'
+    
+}
 
 
 const InfoWrapper = styled.div`
@@ -8,14 +17,14 @@ const InfoWrapper = styled.div`
     color: #fff;
     display: flex;
     align-items: baseline;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: #3b3219;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #604800;
     box-sizing: border-box;
+    width: fit-content;
     
-
 `
 
 const InfoSvg = styled.span`

@@ -1,19 +1,22 @@
 import React from "react";
-import { InfoWrapper, InfoSvg, InfoContent,InfoContentDetails, InfoContentHeading } from "../../Styles/InfoStyles";
+import { InfoWrapper, InfoSvg, InfoContent,InfoContentDetails, InfoContentHeading, InfoTextProps } from "../../Styles/InfoStyles";
 import { MdWarning } from "react-icons/md";
 import CodeBlock from "../CodeBlock";
 
-const InfoText = () => {
+
+const InfoText = (props:InfoTextProps) => {
+
+    const {content, heading, svg, code, ...rest} = props
 
     return(
-        <InfoWrapper>
+        <InfoWrapper {...rest} >
             <InfoSvg>
-                <MdWarning />
+                {svg}
             </InfoSvg>
             <InfoContent>
-                <InfoContentHeading>Unstyled</InfoContentHeading>
-                <InfoContentDetails>There is a known issue with translating a page using Chrome tools when a Loading Button is present. After the page is translated, the application crashes when the loading state of a Button changes. To prevent this, ensure that the contents of the Loading Button are nested inside any HTML element, such as a
-
+                <InfoContentHeading>{heading}</InfoContentHeading>
+                <InfoContentDetails>
+                    {content}
                     <CodeBlock >
                         const x = 5;
                     </CodeBlock>

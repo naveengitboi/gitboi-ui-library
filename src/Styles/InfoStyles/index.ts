@@ -1,1 +1,1 @@
-export { InfoWrapper, InfoSvg, InfoContent, InfoContentHeading, InfoContentDetails} from "./InfoStyled";
+export { InfoWrapper, InfoSvg, InfoContent, InfoContentHeading, InfoContentDetails, InfoTextProps} from "./InfoStyled";

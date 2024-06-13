@@ -2,6 +2,10 @@ import styled, { css } from "styled-components";
 import { commonProps } from "../CommonStyledProps";
 export interface ButtonProps extends commonProps{
   variant?: "text" | "outlined" | "contained";
+   children: React.ReactNode | React.ReactNode[];
+  endIcon?: React.ReactNode | React.ReactNode[];
+  startIcon?: React.ReactNode | React.ReactNode[];
+  onClickEvent?: () => void;
 }
 
 export const BasicButtonStyles = css`
