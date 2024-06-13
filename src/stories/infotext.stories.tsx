@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Meta, StoryObj} from '@storybook/react';
 
-import InfoText from './InfoText';
+import InfoText from '../components/Info';
 
 const meta: Meta<typeof InfoText> = {
     title: 'Components/InfoText',

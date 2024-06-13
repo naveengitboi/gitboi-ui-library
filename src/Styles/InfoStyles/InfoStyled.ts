@@ -3,7 +3,7 @@ import { commonCss } from "../CommonStyledProps";
 
 
 
-export const InfoWrapper = styled.div`
+const InfoWrapper = styled.div`
     ${commonCss}
     color: #fff;
     display: flex;
@@ -18,7 +18,7 @@ export const InfoWrapper = styled.div`
 
 `
 
-export const InfoSvg = styled.span`
+const InfoSvg = styled.span`
     &>svg {
     display: inline-block;
     color: #f5c400;
@@ -27,16 +27,18 @@ export const InfoSvg = styled.span`
 }
 `
 
-export const InfoContent = styled.div`
+const InfoContent = styled.div`
     padding: 0px 10px;
 `
 
-export const InfoContentHeading = styled.p`
+const InfoContentHeading = styled.p`
     font-weight: 500;
     font-size: 18px;
     margin-bottom: 5px;
 
 `
-export const InfoContentDetails = styled.p`
+const InfoContentDetails = styled.p`
     font-size: 16px;
 `
+
+export { InfoWrapper, InfoSvg, InfoContent, InfoContentHeading, InfoContentDetails}

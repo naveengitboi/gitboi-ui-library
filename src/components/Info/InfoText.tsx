@@ -1,10 +1,10 @@
 import React from "react";
-import { InfoWrapper, InfoSvg, InfoContent,InfoContentDetails, InfoContentHeading } from "./InfoStyled";
+import { InfoWrapper, InfoSvg, InfoContent,InfoContentDetails, InfoContentHeading } from "../../Styles/InfoStyles";
 import { MdWarning } from "react-icons/md";
 import CodeBlock from "../CodeBlock";
 
-const InfoText:React.FC = (props) => {
-    
+const InfoText = () => {
+
     return(
         <InfoWrapper>
             <InfoSvg>

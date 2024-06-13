@@ -1,0 +1,13 @@
+{
+    "editor.fontFamily": "Fira Code monsopace",
+    "editor.fontSize": 18,
+    "editor.formatOnSave": true,
+    "editor.fontLigatures": false,
+    "editor.cursorStyle": "line",
+    "editor.codeLensFontFamily": "",
+    "editor.cursorBlinking": "blink",
+    "editor.cursorSmoothCaretAnimation": "off",
+    "editor.cursorWidth": 3,
+    "terminal.integrated.shellIntegration.enabled": false,
+    "terminal.integrated.fontSize": 18
+}

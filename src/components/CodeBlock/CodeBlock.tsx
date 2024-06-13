@@ -1,5 +1,5 @@
 import React, {ReactNode} from "react";
-import { CbWrapper, CbWrapperProps } from "./CbStyled";
+import { CbWrapper, CbWrapperProps } from "../../Styles/CodeBlockStyles";
 
 export interface CodeBlockProps extends CbWrapperProps {
     children?: ReactNode | ReactNode[] |string;

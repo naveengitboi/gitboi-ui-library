@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export interface CbWrapperProps {
+interface CbWrapperProps {
   bgColor?: string;
   borderColor?: string;
   borderRadius?: string;
@@ -15,7 +15,7 @@ export interface CbWrapperProps {
 }
 
 
-export const CbWrapper = styled.span<CbWrapperProps>`
+const CbWrapper = styled.span<CbWrapperProps>`
 
   background-color: ${props => props.bgColor || '#0f171f'};
   border: ${props => props.bSize || 1}px
@@ -30,3 +30,6 @@ export const CbWrapper = styled.span<CbWrapperProps>`
     ${props => props.customStyles}
   }
 `;
+
+
+export { CbWrapper, CbWrapperProps}

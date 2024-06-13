@@ -29,12 +29,15 @@ export default [
 
             // NEW
             terser(),
+
+
+           
         ],
     },
     {
         input: 'dist/cjs/types/src/index.d.ts',
         output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-        plugins: [dts.default()],
+        plugins: [dts.default(), dts.default({ exclude: ['**/*.stories.tsx', '**/*.test.tsx', '/src/**/*.stories.tsx', '**/**/*.stories.tsx'] })],
         external: [/\.css$/],
     },
 ]
