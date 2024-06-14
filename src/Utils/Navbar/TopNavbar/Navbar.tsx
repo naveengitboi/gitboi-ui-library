@@ -1,12 +1,12 @@
 
 import React from 'react';
-import { NavbarButton, NavbarButtonGroup, NavbarContainer, NavbarDropDownItem, NavbarLogo, NavbarLogoText, NavbarMenu, NavbarMenuItem, NavbarWrapper } from '../../UtilStyles/NavbarStyles';
+import { NavbarButton, NavbarButtonGroup, NavbarContainer, NavbarDropDownItem, NavbarLogo, NavbarLogoText, NavbarMenu, NavbarMenuItem, NavbarWrapper } from '../../../UtilStyles/NavbarStyles';
 
 interface NavbarProps {
 
 }
 
-import Button from '../../components/Button'
+import Button from '../../../components/Button'
 
 const Navbar = (props: NavbarProps) => {
 
