@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 
-import { Btngbl, ButtonProps } from "../../Styles/ButtonStyles";
-
+import { Btngbl, ButtonProps } from '../../Styles'
 
 
 const Button = (props:ButtonProps) => {

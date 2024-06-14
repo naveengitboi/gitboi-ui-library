@@ -7,8 +7,7 @@ export interface InfoTextProps extends commonProps{
     svg?: React.ReactNode;
     heading?: string;
     content?: string;
-    type?: 'error' | 'warning' |'success' | 'note'
-    
+    type?: 'error' | 'warning' |'success' | 'note'   
 }
 
 
@@ -18,12 +17,15 @@ const InfoWrapper = styled.div`
     display: flex;
     align-items: baseline;
     justify-content: flex-start;
-    background-color: #3b3219;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #604800;
     box-sizing: border-box;
     width: fit-content;
+
+    
+
+    border: 1px solid #604800;
+    background-color: #3b3219;
     
 `
 

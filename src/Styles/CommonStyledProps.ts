@@ -22,13 +22,15 @@ export interface commonProps {
   hoverScale?: string;
   gapBw?: number;
   hoverSvgColor?: string;
+  margin?: string;
+  padding?: string;
+  fontWeight?:number;
+
+  activeBlendMode?:Boolean;
+  blendMode?:string;
 }
 
 
 export const commonCss = css`
-  *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  
 `
