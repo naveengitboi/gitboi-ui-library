@@ -1,16 +1,15 @@
 
 import {Meta, StoryObj} from '@storybook/react';
 
-import Navbar from '../Utils/Navbar';
-
-const meta: Meta<typeof Navbar> = {
-    title: 'Utils/Navbar',
-    component: Navbar,
+import { TopNavbar } from '../Utils';
+const meta: Meta<typeof TopNavbar> = {
+    title: 'Utils/TopNavbar',
+    component: TopNavbar,
 }
 
 export default meta;
 
-type Story = StoryObj<typeof Navbar>;
+type Story = StoryObj<typeof TopNavbar>;
 
 export const BasicNav: Story = {
   args: {

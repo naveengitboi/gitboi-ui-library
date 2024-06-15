@@ -1,14 +1,12 @@
 
 import React from 'react';
-import { NavbarButton, NavbarButtonGroup, NavbarContainer, NavbarDropDownItem, NavbarLogo, NavbarLogoText, NavbarMenu, NavbarMenuItem, NavbarWrapper } from '../../../UtilStyles/NavbarStyles';
+import { NavbarButton, NavbarButtonGroup, NavbarContainer, NavbarDropDownItem, NavbarLogo, NavbarLogoText, NavbarMenu, NavbarMenuItem, NavbarWrapper } from '../../../UtilStyles';
 
-interface NavbarProps {
 
-}
 
 import Button from '../../../components/Button'
 
-const Navbar = (props: NavbarProps) => {
+const Navbar = () => {
 
     return (
         <NavbarContainer fontWeight={500}>

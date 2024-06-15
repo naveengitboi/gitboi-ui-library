@@ -32,5 +32,5 @@ export interface commonProps {
 
 
 export const commonCss = css`
-  
+  box-sizing: border-box;
 `
