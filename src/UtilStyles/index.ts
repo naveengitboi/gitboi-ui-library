@@ -8,4 +8,4 @@ export {NavbarContainer, NavbarWrapper, NavbarLogo, NavbarMenu, NavbarMenuItem, 
 
 
 //side nav
-export { SidebarContainer, SidebarWrapper, SidebarHeader, SidebarMenu, SideBtnWrap , SidebarLink, SidebarButton} from './SideNavbarStyles/SideNavbarStyled'
+export { SidebarContainer, SidebarWrapper, SidebarHeader, SidebarMenu, SideBtnWrap , SidebarLink, SidebarButton, SidebarClose, SidebarLinkLabel, SidebarLogo, SidebarSvg} from './SideNavbarStyles/SideNavbarStyled'

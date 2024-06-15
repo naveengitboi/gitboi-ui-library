@@ -1,103 +1,121 @@
-import React from "react";
+import React, { ReactElement, useState } from "react";
 
-import { MdAdd, MdAppRegistration, MdClose, MdDashboard, MdDelete, MdHome, MdMenu } from "react-icons/md";
+import {
+  MdClose,
+} from "react-icons/md";
 
-import { SidebarContainer, SidebarWrapper, SidebarHeader, SidebarMenu, SidebarLink, SideBtnWrap, SidebarButton } from "../../../UtilStyles";
-import styled from "styled-components";
 
+import {
+  SidebarContainer,
+  SidebarWrapper,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarLink,
+  SideBtnWrap,
+  SidebarButton,
+  SidebarClose,
+  SidebarLinkLabel,
+  SidebarLogo,
+  SidebarSvg,
+} from "../../../UtilStyles";
 
-const SidebarLogo = styled.div`
-    padding: 0.5rem;
-    border-radius: 5px;
-`
-const SidebarSvg = styled.div`
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem;
-    background-color: #1e293b;
-    color:#f5f9f4;
+import { DiRuby ,DiJsBadge, DiReact, DiMongodb, DiSizzlejs,DiStackoverflow} from "react-icons/di";
+interface elementProps{
+    svg: ReactElement,
+    label: string,
+    url: string
+}
 
-    
-`
-const SidebarLinkLabel = styled.p`
-    position: absolute;
-    font-size: 1.5rem;
-    color: #fff;
-    box-sizing: border-box;
-    margin: 0;
-    right:0%;
-    
+const elements:elementProps[] = [
+    {
+        svg: <DiJsBadge />,
+        label: "JavaScript",
+        url: "#"
+    },
+    {
+        svg: <DiRuby />,
+        label: "Ruby",
+        url: "#"
+    },
+     {
+        svg: <DiMongodb />,
+        label: "Home",
+        url: "#"
+    },
+    {
+        svg: <DiReact />,
+        label: "React Js",
+        url: "#"
+    },
+]
 
-`;
-const SidebarClose = styled.div`
-    position: absolute;
-    right: 0;
-`;
+const btns:elementProps[] = [
+    {
+        svg: <DiSizzlejs />,
+        label: "SizzleJs",
+        url: "#"
+    },
+]
+
 const SideNav = () => {
+  const [openSidebar, setOpenSidebar] = useState(false);
+
+  return (
+    <SidebarContainer openBar={openSidebar}>
+      <SidebarWrapper openBar={openSidebar}>
+        <div>
+            <SidebarHeader>
+          <SidebarLogo onClick={() => setOpenSidebar(!openSidebar)}>
+            <DiStackoverflow />
+          </SidebarLogo>
+
+          <SidebarClose onClick={() => setOpenSidebar(false)} openBar={openSidebar} >
+            <MdClose />
+          </SidebarClose>
+        </SidebarHeader>
+        <SidebarMenu>
+          {
+            elements.map((element, index) => {
+                    return(
+                        <LinkItem key={index} LinkSvg={element.svg} openBar={openSidebar}>
+                            {element.label}
+                        </LinkItem>
+                    )
+                })
+          }
+        </SidebarMenu>
+        </div>
+        <SideBtnWrap>
+          {
+            btns.map((element, index) => {
+                    return(
+                        <LinkItem key={index} LinkSvg={element.svg} openBar={openSidebar}>
+                            {element.label}
+                        </LinkItem>
+                    )
+                })
+          }
+        </SideBtnWrap>
+        
+      </SidebarWrapper>
+    </SidebarContainer>
+  );
+};
+
+
+const LinkItem = ({children, LinkSvg, openBar} : {
+    
+    children: React.ReactNode,
+    LinkSvg: React.ReactNode,
+    openBar: boolean
+    }) => {
     return(
-        <SidebarContainer>
-            <SidebarWrapper>
-                <SidebarHeader>
-                    <SidebarLogo>
-                        <MdHome/>
-                    </SidebarLogo>
-                    
-                    <SidebarClose>
-                        <MdClose/>
-                    </SidebarClose>
-                </SidebarHeader>
-                <SidebarMenu>
-                    <SidebarLink href='#'>
-                        <SidebarSvg>
-                            <MdHome/>
-                        </SidebarSvg>
-                        <SidebarLinkLabel>
-                            Home
-                        </SidebarLinkLabel>
-                    </SidebarLink>
-                    <SidebarLink href='#'>
-                        <SidebarSvg>
-                            <MdDashboard/>
-                        </SidebarSvg>
-                        <SidebarLinkLabel>
-                            Dashboard
-                        </SidebarLinkLabel>
-                    </SidebarLink>
-                    <SidebarLink href='#'>
-                        <SidebarSvg>
-                            <MdAdd/>
-                        </SidebarSvg>
-                        <SidebarLinkLabel>
-                            MdAdd
-                        </SidebarLinkLabel>
-                    </SidebarLink>
-                    <SidebarLink href='#'>
-                        <SidebarSvg>
-                            <MdDelete/>
-                        </SidebarSvg>
-                        <SidebarLinkLabel>
-                            Delete
-                        </SidebarLinkLabel>
-                    </SidebarLink>
-                </SidebarMenu>
-                <SideBtnWrap>
-                    <SidebarButton >
-                        <SidebarSvg>
-                            <MdAppRegistration/>
-                        </SidebarSvg>
-                    </SidebarButton>
-                    <SidebarButton >
-                        <SidebarSvg>
-                            <MdAppRegistration/>
-                        </SidebarSvg>
-                    </SidebarButton>
-                </SideBtnWrap>
-            </SidebarWrapper>
-        </SidebarContainer>
+        <SidebarLink href="#" >
+            <SidebarSvg>
+              {LinkSvg}
+            </SidebarSvg>
+            <SidebarLinkLabel openBar={openBar}>{children}</SidebarLinkLabel>
+        </SidebarLink>
     )
 }
 
