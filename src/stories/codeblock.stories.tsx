@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import CodeBlock from './CodeBlock';
+import CodeBlock from '../components/CodeBlock';
 
 const meta: Meta<typeof CodeBlock> = {
     title: 'Components/CodeBlock',
@@ -13,7 +13,7 @@ type Story = StoryObj<typeof CodeBlock>;
 
 export const CodeBlockStory: Story = {
   args: {
-    code: 'const x = 5;',
+    children: 'const x = 5;',
     fontFamily: 'monospace',
   }
 };

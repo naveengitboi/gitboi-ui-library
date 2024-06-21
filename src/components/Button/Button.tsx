@@ -1,15 +1,9 @@
 import React, { ReactNode } from "react";
 
-import { Btngbl, ButtonProps } from "./ButtonStyled";
+import { Btngbl, ButtonProps } from '../../Styles'
 
-interface BtnGblProps extends ButtonProps {
-  children: ReactNode | ReactNode[];
-  endIcon?: ReactNode | ReactNode[];
-  startIcon?: ReactNode | ReactNode[];
-  onClickEvent?: () => void;
-}
 
-const Button: React.FC<BtnGblProps> = (props) => {
+const Button = (props:ButtonProps) => {
   const { children, onClickEvent, startIcon, endIcon, ...rest } = props;
   return (
     <Btngbl {...rest}>

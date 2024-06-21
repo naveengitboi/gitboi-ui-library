@@ -1,7 +1,12 @@
 import styled, { css } from "styled-components";
 import { commonProps } from "../CommonStyledProps";
+
 export interface ButtonProps extends commonProps{
   variant?: "text" | "outlined" | "contained";
+   children: React.ReactNode | React.ReactNode[];
+  endIcon?: React.ReactNode | React.ReactNode[];
+  startIcon?: React.ReactNode | React.ReactNode[];
+  onClickEvent?: () => void;
 }
 
 export const BasicButtonStyles = css`
@@ -13,6 +18,8 @@ export const BasicButtonStyles = css`
   border-radius: 0.25rem;
   text-align: center;
   text-decoration: none;
+  padding: 10px 20px;
+  color:#90caf9;
 `;
 
 
@@ -28,7 +35,9 @@ const Btngbl = styled.button<ButtonProps>`
 
   background-color: ${(props) => {
     if (props.variant === "contained") {
-      return props.bgColor ? props.bgColor : "#45648d";
+      
+      return props.bgColor ? props.bgColor : "#90caf9";
+      
     } else {
       return "transparent";
     }
@@ -46,13 +55,19 @@ const Btngbl = styled.button<ButtonProps>`
 
   border-radius: ${(props) => (props.bRadius ? props.bRadius : "0.25rem")};
 
-  color: ${(props) => (props.color ? props.color : "")};
-
-  padding: 15px 32px;
+  color: ${(props) => {
+    if(props.variant === "contained"){
+      return "#000"
+    }
+    props.color ? props.color : ""}};
 
   font-size: ${(props) => (props.fSize ? `${props.fSize}` : `16px`)};
+
   transition: all ${(props) => (props.transTime ? props.transTime : "0.3s")};
 
+  padding: ${(props) => (props.padding ? props.padding : "10px 20px")};
+  
+  margin:${(props) => (props.margin ? props.margin : "0")};
 
   &:hover {
         background-color: ${(props) =>

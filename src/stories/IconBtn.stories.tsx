@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Md16Mp } from 'react-icons/md';
 
-import BtnError from './BtnIcon';
+import BtnError from '../components/ButtonIcon';
 
 const meta: Meta<typeof BtnError> = {
     title: 'Components/ButtonIcon',

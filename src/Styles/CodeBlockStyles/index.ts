@@ -1,0 +1,1 @@
+export { CbWrapper, CbWrapperProps} from './CodeBlockStyled'
