@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Meta, StoryObj} from '@storybook/react';
 
-import NavbarMenu from '../Utils/Tabs/NavbarMenu'
+import {NavbarMenu} from '../Utils'
 
 const meta: Meta<typeof NavbarMenu> = {
     title: 'Utils/MenuTabs',

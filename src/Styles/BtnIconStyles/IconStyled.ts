@@ -1,32 +1,29 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
-
-export interface IconProps {
+import { commonProps, commonStyles } from "../CommonStyledProps";
+export interface IconProps extends commonProps {
   variant?: "text" | "outlined" | "contained";
   type?: "error" | "success" | "warning" | "casual";
-  bgColor?:string;
-  bRadius?: string;
-  pd?: string;
 
-  hoverBgColor?: string;
-  hoverColor?: string;
-  width?: string;
-  height?: string;
+  pulseAnimation?: boolean;
 
-
-  svgSize?: string;
-  svgColor?: string;
-  hoverSvgColor?: string;
-  hoverRotate?: string;
-  hoverMove?: string;
-  hoverAll?: boolean;
-  hoverScale?: string;
+  pulseBgColor?: string;
 }
+
+
+const pulse = keyframes`
+  100%{
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+`;
+
 
 export const BtnIconWrapper = styled.button<IconProps>`
 
-  width: ${(props) => (props.width ? props.width : "75px")};
-  height: ${(props) => (props.height ? props.height : "75px")};
+  width: ${(props) => (props.w ? props.w : "75px")};
+  height: ${(props) => (props.h ? props.h : "75px")};
 
   background-color: ${(props) => {
 
@@ -54,9 +51,28 @@ export const BtnIconWrapper = styled.button<IconProps>`
   }};
 
   border-radius: ${(props) => (props.bRadius ? props.bRadius : "50%")};
-
-  padding: ${(props) => (props.pd ? props.pd : '15px')};
+ padding: ${(props) => (props.padding ? props.padding : '15px')};
   
+position: relative;
+
+  
+  &::before, &::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: ${props => props.pulseBgColor ? props.pulseBgColor : ''};
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: -1;
+    animation: ${(props) => props.pulseAnimation ? pulse : ''} 1.5s infinite;
+  }
+  &::after{
+    animation-delay: 0.75s;
+  }
+
 
 
 
@@ -80,6 +96,8 @@ export const BtnIconWrapper = styled.button<IconProps>`
     color: ${(props) => (props.hoverColor ? props.hoverColor : "")};
   }
 
+
+
   & > svg {
     font-size: ${(props) => props.svgSize || "28px"};
 
@@ -90,3 +108,5 @@ export const BtnIconWrapper = styled.button<IconProps>`
 
 
 `;
+
+

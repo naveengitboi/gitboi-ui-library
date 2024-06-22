@@ -1,9 +1,8 @@
 import React from "react";
 import { Md16Mp } from "react-icons/md";
-import { BtnIconWrapper } from "./IconStyled";
+import { BtnIconWrapper } from "../../Styles";
 
-
-import { IconProps } from "./IconStyled";
+import { IconProps } from "../../Styles/BtnIconStyles/IconStyled";
 
 interface BtnIconProps extends IconProps {
   onclickEvent?: () => void;
@@ -14,7 +13,7 @@ interface BtnIconProps extends IconProps {
 const BtnIcon = (props: BtnIconProps) => {
     const {Icon, ...rest} = props
     return(
-        <BtnIconWrapper {...rest}>
+        <BtnIconWrapper {...rest} pulseAnimation={false}>
             {Icon}
         </BtnIconWrapper>
     )

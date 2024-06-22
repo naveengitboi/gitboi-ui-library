@@ -30,8 +30,6 @@ const Btngbl = styled.button<ButtonProps>`
 
   ${BasicButtonStyles}
 
-  width: ${(props) => (props.w ? props.w : "auto")};
-  height: ${(props) => (props.h ? props.h : "auto")};
 
   background-color: ${(props) => {
     if (props.variant === "contained") {
