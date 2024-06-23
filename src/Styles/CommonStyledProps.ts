@@ -48,6 +48,8 @@ export const commonStyles = css<commonProps>`
 
   border: ${(props) => (props.bSize ? `${props.bSize}px solid ${props.borderColor}` : "none")};
 
+  border-color: ${(props) => (props.borderColor ? props.borderColor : "")};
+  
   border-radius: ${(props) => (props.bRadius ? props.bRadius : "0")};
 
   transition: ${(props) => (props.transTime ? props.transTime : "all 0.3s")};
@@ -60,6 +62,7 @@ export const commonStyles = css<commonProps>`
 
   padding: ${(props) => (props.padding ? props.padding : "0")};
 
+  gap: ${(props) => (props.gapBw ? `${props.gapBw}px` : "0")};
 
 
   animation-duration:${(props) => (props.animationDuration ? props.animationDuration : "1s")};
@@ -72,7 +75,7 @@ export const commonStyles = css<commonProps>`
 
   & > svg {
     font-size: ${(props) => (props.svgSize ? props.svgSize : "16px")};
-    color: ${(props) => (props.svgColor ? props.svgColor : "black")};
+    color: ${(props) => (props.svgColor ? props.svgColor : "")};
 
     transition: transform 0.3s;
 

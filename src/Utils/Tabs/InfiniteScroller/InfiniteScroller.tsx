@@ -1,99 +1,135 @@
-import React, {useEffect, useRef, useState} from "react"
+import React from "react"
 import styled, {keyframes} from "styled-components"
 import { commonCss } from "../../../Styles/CommonStyledProps"
+import {
+  SiLeetcode,
+  SiCodeforces,
+  SiCodechef,
+  SiGeeksforgeeks,
+  SiHackerrank,
+  SiHackerearth,
 
+} from "react-icons/si";
+import { GiHorseHead } from "react-icons/gi";
+import { TbBrandCpp } from "react-icons/tb";
 
 interface ScrollItemProps {
-    scrollWidth?: number | undefined;
-    count?: number | undefined;
-    numberofItems?: number | undefined;
-    totalDuration?: number |undefined;
+    scrollWidth?: any | undefined;
+    count?: any | undefined;
+    numberofItems?: any | undefined;
+    totalDuration?: any |undefined;
 }
 
 const ScrollerContainer = styled.div<ScrollItemProps>`
     ${commonCss}
     box-sizing: border-box;
-    height: 100px;
+    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+    border: 2px solid lime;
+    overflow-x: hidden;
+    width: auto;
+
 `
 
-const scrollLeft = (stwidth:number|undefined) => keyframes<ScrollItemProps>`
-    
-    to{
-        left: -${stwidth}px;
-    }
+const scrollLeft = keyframes<ScrollItemProps>`
 
 
 `
 
 const ScrollerWrapper = styled.div<ScrollItemProps>`
-  height: 100%;
-    position: relative;
-    overflow: hidden;
-    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+ display: flex;
+  flex-wrap: nowrap;
+  width: fit-content;
+animation: ${scrollLeft} 5s linear infinite;  
+border: 3px solid red;
+  margin: 2rem 0;
 `
+
 
 const ScrollItem = styled.div<ScrollItemProps>`
-    background-color: green;
-    height: 100%;
-    width: 200px;
-    animation: ${(props) => scrollLeft(props.scrollWidth)} linear infinite;
-    animation-duration: ${(props)=> `${props.totalDuration}s`};
-    animation-delay: ${(props)=> `-${(props.totalDuration/props.numberofItems)*(props.numberofItems - props.count)}s`}; 
-    border-radius: 0.25rem;
-    position: absolute;
-    left: ${(props) => {
-        return(
-            `max(calc(${props.scrollWidth} * ${props.numberofItems}px), 100%)`
-        )
-    }};
+    display: block;
+  width: max-content;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1rem;
+    
+`
+const Param = styled.p`
+        font-size:1.5rem;
+        color:white;
+        font-weight:bold;
+        text-transform:uppercase;
+    
 `
 
-const scrollItemsList = [
-    {
-        id: 1,
-        title: "Item 1"
-    },
-    {
-        id: 2,
-        title: "Item 2"
-    },
-    {
-        id: 3,
-        title: "Item 3"
-    }
-    ,
-    {
-        id: 4,
-        title: "Item 3"
-    }
-    ,
-    {
-        id: 5,
-        title: "Item 3"
-    }
-]
+
+
+const  scrollItemsList = [
+  {
+    type: "svg",
+    image: <SiHackerrank />,
+    name: "Hackerrank",
+    link: "https://www.hackerrank.com/",
+  },
+  {
+    type: "svg",
+    image: <SiLeetcode />,
+    name: "LeetCode",
+    link: "https://leetcode.com/",
+  },
+  {
+    type: "svg",
+    image: <SiGeeksforgeeks />,
+    name: "GFG",
+    link: "https://www.geeksforgeeks.org/",
+  },
+  {
+    type: "svg",
+    image: <TbBrandCpp />,
+    name: "CPP ref",
+    link: "https://en.cppreference.com/w/",
+  },
+  {
+    type: "svg",
+    image: <SiCodechef />,
+    name: "CodeChef",
+    link: "https://www.codechef.com/",
+  },
+  {
+    type: "svg",
+    image: <GiHorseHead />,
+    name: "Atcode",
+    link: "https://atcoder.jp/",
+  },
+  {
+    type: "svg",
+    image: <SiHackerearth />,
+    name: "Hackerearth",
+    link: "https://www.hackerearth.com/",
+  },
+  {
+    type: "svg",
+    image: <SiCodeforces />,
+    name: "CodeForces",
+    link: "https://codeforces.com/",
+  },
+];
+
 
 
 const InfinteScroller = () => {
-    const [scrollItemWidth, setScrollItemWidth] = useState<number>(0)
-
-    const scrollItemRef = useRef<HTMLDivElement>(null)
-
-    useEffect(() => {
-         if(scrollItemRef?.current){
-            const {width} = scrollItemRef?.current?.getBoundingClientRect() 
-            console.log(typeof width, width)
-            setScrollItemWidth(width)
-
-         }
-    }, [])
     
     return(
         <ScrollerContainer>
             <ScrollerWrapper>
                 {
-                    scrollItemsList.map((item, idx) => (
-                        <ScrollItem key={item.id} ref={scrollItemRef} scrollWidth={scrollItemWidth} count={(idx+1)} numberofItems={scrollItemsList.length} totalDuration={5} >{item.title}</ScrollItem>
+                    [...scrollItemsList, ...scrollItemsList].map((item, idx) => (
+                        <ScrollItem key={idx} >
+                           
+                           <Param>
+                            {item.name}
+                           </Param>
+                        
+                        </ScrollItem>
                     ))
                 }
             </ScrollerWrapper>
