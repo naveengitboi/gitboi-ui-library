@@ -2,7 +2,6 @@ import { css } from "styled-components";
 
 export interface commonProps {
   color?: string;
-  customStyles?: any;
   fSize?: string;
   bSize?: number;
   bgColor?: string;
@@ -25,13 +24,15 @@ export interface commonProps {
   margin?: string;
   padding?: string;
   fontWeight?:number;
-
-
+  
+  
   animationDuration?:string;
   
-
+  
   activeBlendMode?:Boolean;
   blendMode?:string;
+  
+  customStyles?: any;
 }
 
 
@@ -40,6 +41,7 @@ export const commonCss = css`
 `
 
 export const commonStyles = css<commonProps>`
+
 
   color: ${(props) => (props.color ? props.color : "blue")};
   font-size: ${(props) => (props.fSize ? props.fSize : "16px")};
@@ -72,6 +74,8 @@ export const commonStyles = css<commonProps>`
   font-weight:${(props) => (props.fontWeight ? props.fontWeight : "400")};
 
   ${(props) => props.activeBlendMode ? `background-blend-mode: ${props.blendMode}` : ""}
+  
+  font-family: 'poppins', sans-serif;
 
   & > svg {
     font-size: ${(props) => (props.svgSize ? props.svgSize : "16px")};
@@ -99,4 +103,6 @@ export const commonStyles = css<commonProps>`
     transform: ${(props) => (props.hoverAll ? `rotate(${props.hoverRotate}) translate(${props.hoverMove}) scale(${props.hoverScale})` : "")};
 
   }
+
+
 `;
