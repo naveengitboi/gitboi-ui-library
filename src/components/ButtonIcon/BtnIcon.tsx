@@ -6,15 +6,15 @@ import { IconProps } from "../../Styles/BtnIconStyles/IconStyled";
 
 interface BtnIconProps extends IconProps {
   onclickEvent?: () => void;
-    Icon: React.ReactNode;
+    children: React.ReactNode;
 
 }
 
 const BtnIcon = (props: BtnIconProps) => {
-    const {Icon, ...rest} = props
+    const {children, ...rest} = props
     return(
         <BtnIconWrapper {...rest} pulseAnimation={false}>
-            {Icon}
+            {children}
         </BtnIconWrapper>
     )
 }

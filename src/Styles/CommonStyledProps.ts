@@ -24,6 +24,7 @@ export interface commonProps {
   margin?: string;
   padding?: string;
   fontWeight?:number;
+  makeCenter?:boolean;
   
   
   animationDuration?:string;
@@ -76,6 +77,16 @@ export const commonStyles = css<commonProps>`
   ${(props) => props.activeBlendMode ? `background-blend-mode: ${props.blendMode}` : ""}
   
   font-family: 'poppins', sans-serif;
+
+  ${props => {
+        if(props.makeCenter){
+            return `
+                display: flex;
+                justify-content:center;
+                align-items:center;
+            `
+        }
+    }}
 
   & > svg {
     font-size: ${(props) => (props.svgSize ? props.svgSize : "16px")};

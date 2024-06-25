@@ -43,8 +43,24 @@ const StyledBtn = styled.button<ButtonProps>`
         if(props.varient === 'outline'){
             return `1px solid ${props.borderColor ? props.borderColor : 'white'}`
         }
-        
     }};
+    
+
+    &>svg{
+        font-size: ${(props) => props.svgSize ? props.svgSize : '20px'};
+        color: ${(props) => {
+        if(props.svgColor){
+            return props.svgColor
+        }
+        if(props.varient === 'contained'){
+            return 'black'
+        }
+        else{
+            return 'white'
+        }
+    }};
+    
+    }
 
 
     ${(props) => props.customStyles}

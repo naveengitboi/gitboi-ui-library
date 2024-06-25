@@ -14,6 +14,6 @@ type Story = StoryObj<typeof BtnIcon>;
 
 export const IconBtn: Story = {
   args: {
-    Icon: <Md16Mp />,
+    children: <Md16Mp />,
   }
 };
