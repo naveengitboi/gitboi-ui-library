@@ -1,7 +1,7 @@
 
 import styled from "styled-components";
 
-import { commonCss, commonProps } from "../../Styles/CommonStyledProps";
+import { commonCss, commonProps, commonStyles } from "../../Styles/CommonStyledProps";
 
 import { BasicButtonStyles } from "../../Styles/ButtonStyles/ButtonStyled";
 
@@ -14,6 +14,7 @@ interface NavbarProps extends commonProps{
 
 const NavbarContainer = styled.div<NavbarProps>`
     ${commonCss}
+    ${commonStyles}
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,6 +33,9 @@ const NavbarContainer = styled.div<NavbarProps>`
 `
 
 const NavbarWrapper = styled.div<NavbarProps>`
+
+    
+    
     display: flex;
     align-items: center;
     justify-content: ${(props) => (props.seperationType === 'trisect' ? 'space-between' : 'start')};

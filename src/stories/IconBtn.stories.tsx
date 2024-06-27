@@ -2,19 +2,18 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Md16Mp } from 'react-icons/md';
 
-import BtnError from '../components/ButtonIcon';
-
-const meta: Meta<typeof BtnError> = {
+import { BtnIcon } from '../components';
+const meta: Meta<typeof BtnIcon> = {
     title: 'Components/ButtonIcon',
-    component: BtnError,
+    component: BtnIcon,
 }
 
 export default meta;
 
-type Story = StoryObj<typeof BtnError>;
+type Story = StoryObj<typeof BtnIcon>;
 
 export const IconBtn: Story = {
   args: {
-    Icon: <Md16Mp />,
+    children: <Md16Mp />,
   }
 };

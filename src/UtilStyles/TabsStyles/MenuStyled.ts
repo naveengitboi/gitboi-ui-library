@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components";
 import {motion} from 'framer-motion'
 
-import { commonProps } from "../../Styles/CommonStyledProps";
+import { commonProps, commonStyles } from "../../Styles/CommonStyledProps";
 
 
 const MenuWrapper = styled.ul<commonProps>`
@@ -20,6 +20,7 @@ const MenuWrapper = styled.ul<commonProps>`
 
 
 const MenuItem = styled.li<commonProps>`
+    ${commonStyles}
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;

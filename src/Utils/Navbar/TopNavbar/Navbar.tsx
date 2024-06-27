@@ -4,8 +4,6 @@ import { NavbarButton, NavbarButtonGroup, NavbarContainer, NavbarDropDownItem, N
 
 
 
-import Button from '../../../components/Button'
-
 const Navbar = () => {
 
     return (
@@ -25,7 +23,7 @@ const Navbar = () => {
 
                 <NavbarButtonGroup>
                     <NavbarButton>Sign In</NavbarButton>
-                    <Button variant='contained' margin='0 10px' >Sign Up</Button>
+                    <NavbarButton>Sign In</NavbarButton>
                 </NavbarButtonGroup>
 
             </NavbarWrapper>
